@@ -2,4 +2,5 @@
 
 ```python
 from bookshelf.models import Book
-Book.objects.all()
+book = Book.objects.get(title="1984")
+book  # This should output: <Book: 1984>
