@@ -8,7 +8,7 @@ from .models import Book, Library, UserProfile
 from django.contrib.auth.decorators import permission_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Book
-
+from .models import Library
 
 
 # -------------------------------
@@ -23,7 +23,7 @@ def list_books(request):
 # -------------------------------
 class LibraryDetailView(DetailView):
     model = Library
-    template_name = 'relationship_app/librarian_view.html'
+    template_name = 'relationship_app/library_detail.html'
     context_object_name = 'library'
 
 # -------------------------------
@@ -70,7 +70,7 @@ def admin_view(request):
 
 @user_passes_test(is_librarian)
 def librarian_view(request):
-    return render(request, 'relationship_app/librarian_view.html')
+    return render(request, 'relationship_app/library_detial.html')
 
 @user_passes_test(is_member)
 def member_view(request):
