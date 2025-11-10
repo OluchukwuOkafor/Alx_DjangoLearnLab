@@ -51,7 +51,7 @@ def is_admin(user):
     return hasattr(user, 'userprofile') and user.userprofile.role == 'Admin'
 
 def is_librarian(user):
-    return hasattr(user, 'userprofile') and user.userprofile.role == 'Librarian'
+    return hasattr(user, 'userprofile') and user.userprofile.role == 'Library'
 
 def is_member(user):
     return hasattr(user, 'userprofile') and user.userprofile.role == 'Member'
@@ -65,7 +65,7 @@ def admin_view(request):
 
 @user_passes_test(is_librarian)
 def librarian_view(request):
-    return render(request, 'relationship_app/library_detail.html')
+    return render(request, 'relationship_app/templates/relationship_app/library_detail.html')
 
 @user_passes_test(is_member)
 def member_view(request):
