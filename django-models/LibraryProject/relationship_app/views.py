@@ -34,7 +34,8 @@ class LibraryDetailView(DetailView):
 # -------------------------------
 # User Registration View
 # -------------------------------
-def register_view(request):
+# Rename register_view -> register
+def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
