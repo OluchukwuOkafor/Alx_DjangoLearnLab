@@ -1,9 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
 <body>
-<h2>Profile</h2>
 
-<p>Username: {{ request.user.username }}</p>
+<h2>Profile</h2>
 
 <form method="post">
     {% csrf_token %}
@@ -12,6 +16,5 @@
     <button type="submit">Update</button>
 </form>
 
-<a href="{% url 'logout' %}">Logout</a>
 </body>
 </html>
