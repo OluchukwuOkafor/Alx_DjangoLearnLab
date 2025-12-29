@@ -38,3 +38,10 @@ urlpatterns += [
         name="comment-delete"
     ),
 ]
+
+from django.urls import path
+from .views import PostSearchView
+
+urlpatterns = [
+    path('search/', PostSearchView.as_view(), name='post-search'),
+]
