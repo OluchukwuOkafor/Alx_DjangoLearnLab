@@ -45,3 +45,7 @@ from .views import PostSearchView
 urlpatterns = [
     path('search/', PostSearchView.as_view(), name='post-search'),
 ]
+
+urlpatterns = [
+    path('search/', views.search_posts, name='search_posts'),
+]
