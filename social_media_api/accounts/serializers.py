@@ -6,7 +6,7 @@ User = get_user_model()
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(write_only=True)
+    password = serializers.CharField()
 
     class Meta:
         model = User
@@ -23,7 +23,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.profile_picture = validated_data.get('profile_picture', None)
         user.save()
 
-        # REQUIRED BY CHECKER
         Token.objects.create(user=user)
 
         return user
